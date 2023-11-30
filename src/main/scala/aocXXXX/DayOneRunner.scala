@@ -10,7 +10,6 @@ import scala.util.Using
  * <br>Part 2: Return the product of inputs */
 class DayOneRunner(inputPathname: String) extends AocRunner(inputPathname) {
   override val input: List[Int] = {
-    val source = io.Source.fromFile(inputPathname)
     source.mkString.split(",").map(_.toInt).toList
   }
 
