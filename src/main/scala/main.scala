@@ -6,7 +6,7 @@ import aocframework.AocRunner
 def AocExecution(year: String, day: Int, part: Int): Unit = {
   val runner: AocRunner = Class.forName(s"com.vrbloke.aoc${year}.Day${mapNumberToWord(day, true)}Runner")
     .getDeclaredConstructor(classOf[String])
-    .newInstance(s"$year-$day")
+    .newInstance(s"$year-$day.txt")
     .asInstanceOf[AocRunner]
 
   println(s"Running Day ${mapNumberToWord(day)} Part ${mapNumberToWord(part)}!")
