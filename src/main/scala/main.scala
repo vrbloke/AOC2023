@@ -4,7 +4,7 @@ import aocframework.AocRunner
 
 @main
 def AocExecution(year: String, day: Int, part: Int): Unit = {
-  val runner: AocRunner = Class.forName(s"com.vrbloke.aoc${year}.Day${mapNumberToWord(day, true)}Runner")
+  val runner: AocRunner = Class.forName(s"com.vrbloke.aoc$year.Day${mapNumberToWord(day, true)}Runner")
     .getDeclaredConstructor(classOf[String])
     .newInstance(s"$year-$day.txt")
     .asInstanceOf[AocRunner]
@@ -21,7 +21,7 @@ def runAndTime(f: () => String): Unit = {
   println(f())
   val end = System.nanoTime()
   val elapsed: Double = end - start
-  println(f"Execution took ${elapsed * 1e-9}%.2f\ufeffs, or ${elapsed * 1e-6}%.3f\ufeffms, or ${elapsed}%.0f\ufeffns.")
+  println(f"Execution took ${elapsed * 1e-9}%.2f\ufeffs, or ${elapsed * 1e-6}%.3f\ufeffms, or $elapsed%.0f\ufeffns.")
 }
 
 def mapNumberToWord(num: Int, className: Boolean = false): String = num match {
