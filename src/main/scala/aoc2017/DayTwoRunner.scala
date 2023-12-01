@@ -4,7 +4,6 @@ package aoc2017
 import aocframework.AocRunner
 
 import scala.annotation.tailrec
-import scala.util.Sorting
 
 class DayTwoRunner(inputPathname: String) extends AocRunner(inputPathname) {
   override def input: List[List[Int]] = source.mkString.split("\n")
