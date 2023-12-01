@@ -21,7 +21,7 @@ def runAndTime(f: () => String): Unit = {
   println(f())
   val end = System.nanoTime()
   val elapsed: Double = end - start
-  println(f"Execution took ${elapsed * 0.000_000_001}%.2f\ufeffs, or ${elapsed * 0.000_001}%.3f\ufeffms, or ${elapsed}%.0f\ufeffns.")
+  println(f"Execution took ${elapsed * 1e-9}%.2f\ufeffs, or ${elapsed * 1e-6}%.3f\ufeffms, or ${elapsed}%.0f\ufeffns.")
 }
 
 def mapNumberToWord(num: Int, className: Boolean = false): String = num match {
