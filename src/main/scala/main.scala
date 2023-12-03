@@ -13,15 +13,23 @@ def AocExecution(year: String, day: Int, part: Int): Unit = {
   part match {
     case 1 => runAndTime(runner.part1)
     case 2 => runAndTime(runner.part2)
+    case 3 => runAndTime(runBoth(runner))
   }
 }
+
+def runBoth(r: AocSolver): () => String =
+  () => {
+    println(r.part1())
+    println(r.part2())
+    "Timing both parts..."
+  }
 
 def runAndTime(f: () => String): Unit = {
   val start = System.nanoTime()
   println(f())
   val end = System.nanoTime()
   val elapsed: Double = end - start
-  println(f"Execution took ${elapsed * 1e-9}%.2f\ufeffs, or ${elapsed * 1e-6}%.3f\ufeffms, or $elapsed%.0f\ufeffns.")
+  println(f"Execution took ${elapsed * 1e-9}%.2f\ufeffs, or ${elapsed * 1e-6}%.3f\ufeffms")
 }
 
 def mapNumberToWord(num: Int, className: Boolean = false): String = num match {
