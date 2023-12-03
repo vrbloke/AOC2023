@@ -12,7 +12,7 @@ class DayTwoSolver(inputPathname: String) extends AocSolver(inputPathname) {
   protected case class TurnRecord(red: Int, blue: Int, green: Int)
   protected case class GameRecord(id: Int, turns: List[TurnRecord])
 
-  override def input: List[GameRecord] =
+  def input: List[GameRecord] =
     source.mkString.split("\n").map(_.split(";")).zipWithIndex.map(parseGameRecord).toList
 
   override def part1(): String =

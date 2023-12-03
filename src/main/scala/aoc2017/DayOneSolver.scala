@@ -6,7 +6,7 @@ import aocframework.AocSolver
 import scala.annotation.tailrec
 
 class DayOneSolver(inputPathname: String) extends AocSolver(inputPathname) {
-  override val input: List[Int] = source.mkString.toList.map(_.toString.toInt)
+  def input: List[Int] = source.mkString.toList.map(_.toString.toInt)
 
   override def part1(): String =
     val tuples = input.lazyZip(input.drop(1) ++ input.take(1))

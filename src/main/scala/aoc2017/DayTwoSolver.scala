@@ -6,7 +6,7 @@ import aocframework.AocSolver
 import scala.annotation.tailrec
 
 class DayTwoSolver(inputPathname: String) extends AocSolver(inputPathname) {
-  override def input: List[List[Int]] = source.mkString.split("\n")
+  def input: List[List[Int]] = source.mkString.split("\n")
     .map(row => row.split(raw"\s").map(_.toInt).toList)
     .toList
 

@@ -9,7 +9,7 @@ import scala.util.matching.Regex
  * See puzzle at https://adventofcode.com/2023/day/1
  */
 class DayOneSolver(inputPathname: String) extends AocSolver(inputPathname) {
-  override def input: List[String] = source.mkString.split("\n").toList
+  def input: List[String] = source.mkString.split("\n").toList
 
   private def digitsR: Regex = raw"(zero|one|two|three|four|five|six|seven|eight|nine)".r
   
