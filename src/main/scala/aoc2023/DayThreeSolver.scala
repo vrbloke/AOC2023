@@ -21,7 +21,7 @@ class DayThreeSolver(inputPathname: String) extends AocSolver(inputPathname) {
 
   private val input: String = source.mkString
   private def rowLen: Int = input.indexWhere(_ == '\n')+2
-  private def schem: Vector[Char] = ("O"*(rowLen-1)+"\nO" + input.replaceAll("\n", "\nO") + "\n"+"O"*(rowLen)).toVector
+  private val schem: Vector[Char] = ("O"*(rowLen-1)+"\nO" + input.replaceAll("\n", "\nO") + "\n"+"O"*(rowLen)).toVector
 
   private def isSymbol(c: Char): Boolean = !(c.isDigit || c == '.' || c == '\n' || c == 'O')
   private def isIgnored(c: Char): Boolean = c == '\n' || c == 'O'
