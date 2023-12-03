@@ -5,13 +5,13 @@ import aocframework.AocSolver
 
 import Ordering.by
 
-private case class TurnRecord(red: Int, blue: Int, green: Int)
-private case class GameRecord(id: Int, turns: List[TurnRecord])
-
 /**
  * See puzzle at https://adventofcode.com/2023/day/2
  */
 class DayTwoSolver(inputPathname: String) extends AocSolver(inputPathname) {
+  protected case class TurnRecord(red: Int, blue: Int, green: Int)
+  protected case class GameRecord(id: Int, turns: List[TurnRecord])
+
   override def input: List[GameRecord] =
     source.mkString.split("\n").map(_.split(";")).zipWithIndex.map(parseGameRecord).toList
 
@@ -23,7 +23,7 @@ class DayTwoSolver(inputPathname: String) extends AocSolver(inputPathname) {
       .sum.toString
 
   /**
-   * For part 2, you must find the maximum number of cubes of each color used in a game 
+   * For part 2, you must find the maximum number of cubes of each color used in a game
    * and calculate the product of the three maxima.
    */
   override def part2(): String =
