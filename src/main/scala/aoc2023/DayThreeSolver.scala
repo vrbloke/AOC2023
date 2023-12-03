@@ -3,9 +3,7 @@ package aoc2023
 
 import aocframework.AocSolver
 
-import java.util.regex.Pattern
 import scala.annotation.tailrec
-import scala.collection.immutable.ArraySeq
 import scala.collection.mutable.ArrayBuffer
 /**
  * See puzzle at https://adventofcode.com/2023/day/3
@@ -21,7 +19,7 @@ class DayThreeSolver(inputPathname: String) extends AocSolver(inputPathname) {
 
   private val input: String = source.mkString
   private def rowLen: Int = input.indexWhere(_ == '\n')+2
-  private val schem: Vector[Char] = ("O"*(rowLen-1)+"\nO" + input.replaceAll("\n", "\nO") + "\n"+"O"*(rowLen)).toVector
+  private val schem: Vector[Char] = ("O"*(rowLen-1)+"\nO" + input.replaceAll("\n", "\nO") + "\n"+"O"*rowLen).toVector
 
   private def isSymbol(c: Char): Boolean = !(c.isDigit || c == '.' || c == '\n' || c == 'O')
   private def isIgnored(c: Char): Boolean = c == '\n' || c == 'O'
