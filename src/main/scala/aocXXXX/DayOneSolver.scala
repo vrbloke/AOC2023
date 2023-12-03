@@ -1,12 +1,12 @@
 package com.vrbloke
 package aocXXXX
 
-import aocframework.AocRunner
+import aocframework.AocSolver
 
 /** This sample runner receives a list of commma-separated integers.
  * <br/>Part 1: Return the sum of inputs
  * <br/>Part 2: Return the product of inputs */
-class DayOneRunner(inputPathname: String) extends AocRunner(inputPathname) {
+class DayOneSolver(inputPathname: String) extends AocSolver(inputPathname) {
   override val input: List[Int] =
     source.mkString.split(",").map(_.toInt).toList
 

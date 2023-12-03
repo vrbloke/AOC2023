@@ -1,9 +1,9 @@
 package com.vrbloke
 package aocXXXX
 
-import aocframework.AocRunner
+import aocframework.AocSolver
 
-class DayTwentyThreeRunner(inputPathname: String) extends AocRunner(inputPathname: String) {
+class DayTwentyThreeSolver(inputPathname: String) extends AocSolver(inputPathname: String) {
   override def input: List[_] = List()
 
   override def part1(): String = "Part One Result"

@@ -1,13 +1,13 @@
 package com.vrbloke
 
-import aocframework.AocRunner
+import aocframework.AocSolver
 
 @main
 def AocExecution(year: String, day: Int, part: Int): Unit = {
-  val runner: AocRunner = Class.forName(s"com.vrbloke.aoc$year.Day${mapNumberToWord(day, true)}Runner")
+  val runner: AocSolver = Class.forName(s"com.vrbloke.aoc$year.Day${mapNumberToWord(day, true)}Solver")
     .getDeclaredConstructor(classOf[String])
     .newInstance(s"$year-$day.txt")
-    .asInstanceOf[AocRunner]
+    .asInstanceOf[AocSolver]
 
   println(s"Running Day ${mapNumberToWord(day)} Part ${mapNumberToWord(part)}!")
   part match {

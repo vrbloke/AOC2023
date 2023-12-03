@@ -1,11 +1,11 @@
 package com.vrbloke
 package aoc2017
 
-import aocframework.AocRunner
+import aocframework.AocSolver
 
 import scala.annotation.tailrec
 
-class DayTwoRunner(inputPathname: String) extends AocRunner(inputPathname) {
+class DayTwoSolver(inputPathname: String) extends AocSolver(inputPathname) {
   override def input: List[List[Int]] = source.mkString.split("\n")
     .map(row => row.split(raw"\s").map(_.toInt).toList)
     .toList

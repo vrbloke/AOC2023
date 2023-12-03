@@ -3,7 +3,7 @@ package aocframework
 
 import scala.io.BufferedSource
 
-abstract class AocRunner(inputPathname: String) {
+abstract class AocSolver(inputPathname: String) {
   val source: BufferedSource = io.Source.fromFile(inputPathname)
   
   /** This field must be initialized. Write additional methods if necessary but try not to */

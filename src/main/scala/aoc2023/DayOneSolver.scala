@@ -1,25 +1,25 @@
 package com.vrbloke
 package aoc2023
 
-import aocframework.AocRunner
+import aocframework.AocSolver
 
 import scala.util.matching.Regex
 
-class DayOneRunner(inputPathname: String) extends AocRunner(inputPathname) {
+/**
+ * See puzzle at https://adventofcode.com/2023/day/1
+ */
+class DayOneSolver(inputPathname: String) extends AocSolver(inputPathname) {
   override def input: List[String] = source.mkString.split("\n").toList
 
   private def digitsR: Regex = raw"(zero|one|two|three|four|five|six|seven|eight|nine)".r
-
-  /**
-   *  See puzzle at https://adventofcode.com/2023/day/1
-   */
+  
   override def part1(): String =
     input.map(
       _.filter(_.isDigit).headAndTail.map(_.toString).foldRight("")(_++_).toInt
     ).sum.toString
 
   /**
-   * See puzzle at https://adventofcode.com/2023/day/1
+   * For part 2, some of the numbers can be represented by words.
    */
   override def part2(): String =
     input

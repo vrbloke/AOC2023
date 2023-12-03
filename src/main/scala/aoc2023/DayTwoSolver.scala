@@ -1,7 +1,7 @@
 package com.vrbloke
 package aoc2023
 
-import aocframework.AocRunner
+import aocframework.AocSolver
 
 import Ordering.by
 
@@ -11,7 +11,7 @@ private case class GameRecord(id: Int, turns: List[TurnRecord])
 /**
  * See puzzle at https://adventofcode.com/2023/day/2
  */
-class DayTwoRunner(inputPathname: String) extends AocRunner(inputPathname) {
+class DayTwoSolver(inputPathname: String) extends AocSolver(inputPathname) {
   override def input: List[GameRecord] =
     source.mkString.split("\n").map(_.split(";")).zipWithIndex.map(parseGameRecord).toList
 
@@ -22,6 +22,10 @@ class DayTwoRunner(inputPathname: String) extends AocRunner(inputPathname) {
       .map(_.id)
       .sum.toString
 
+  /**
+   * For part 2, you must find the maximum number of cubes of each color used in a game 
+   * and calculate the product of the three maxima.
+   */
   override def part2(): String =
     input
       .map(maxCubesShown)
